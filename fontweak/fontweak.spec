@@ -73,3 +73,4 @@ install -m 0644 "icon.svg" "%{buildroot}/%{_datadir}/pixmaps/%{name}.svg"
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+
