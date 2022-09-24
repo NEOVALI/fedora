@@ -44,6 +44,4 @@ install -m 644 %{S:6} %{buildroot}%{_ttfontsdir}
 %dir %{_ttfontsdir}
 
 %changelog
-* Fri Sep 23 2022 hey5v <156211398@qq.com> - 8.00-1
-- new version
 

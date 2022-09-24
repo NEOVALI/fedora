@@ -37,8 +37,4 @@ install -m 644 *.ttc %{buildroot}%{_ttfontsdir}
 %dir %{_ttfontsdir}
 
 %changelog
-* Fri Sep 23 2022 hey5v <156211398@qq.com> - 0.37.4-1
-- Update to 0.37.4
 
-* Tue Mar 22 2022 zhullyb <zhullyb@outlook.com> - 0.36.1-1
-- new version
