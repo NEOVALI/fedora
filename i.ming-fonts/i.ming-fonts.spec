@@ -24,7 +24,7 @@ I.明體（I.Ming）乃係一套依照傳承字形標準化文件《傳承字形
 %define _ttfontsdir /usr/share/fonts/i.ming
 
 %build
-cp %{S:0} ./
+cp %{S:0} ./LICENSE
 
 %install
 install -d %{buildroot}%{_ttfontsdir}
