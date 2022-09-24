@@ -22,7 +22,7 @@ Release:        1%{?dist}
 Summary:        GUI front-end of fontconfig
 License:        GPL-3.0+
 Url:            https://github.com/guoyunhe/fontweak
-Source:         %{url}/releases/download/v1.3.1/%{name}-%{version}.tar.gz
+Source:         %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires:  ant
 BuildRequires:  java-devel >= 1.7.0
 Requires:       java >= 1.7.0
