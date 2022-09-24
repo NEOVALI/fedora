@@ -5,7 +5,7 @@ Summary:        SARASA GOTHIC, a CJK programing font based on Iosevka, Inter and
 License:        OFL-1.1
 Url:            https://github.com/be5invis/Sarasa-Gothic
 Source0:        https://raw.githubusercontent.com/be5invis/Sarasa-Gothic/master/LICENSE
-Source1:        %{url}/Sarasa-Gothic/releases/download/v%{version}/sarasa-gothic-ttc-%{version}.7z
+Source1:        %{url}/releases/download/v%{version}/sarasa-gothic-ttc-%{version}.7z
 BuildRequires:  fontpackages-devel
 BuildRequires:  p7zip
 BuildArch:      noarch
@@ -42,4 +42,3 @@ install -m 644 *.ttc %{buildroot}%{_ttfontsdir}
 
 * Tue Mar 22 2022 zhullyb <zhullyb@outlook.com> - 0.36.1-1
 - new version
-
