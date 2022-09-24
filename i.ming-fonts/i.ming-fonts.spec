@@ -5,12 +5,12 @@ Summary:        I.明體（I.Ming）乃係一套依照傳承字形標準化文�
 License:        IPA-1.0
 Url:            https://github.com/ichitenfont/I.Ming
 Source0:        https://raw.githubusercontent.com/ichitenfont/I.Ming/master/LICENSE.md
-Source1:        %{url}/I.Ming/raw/master/%{version}/I.Ming-%{version}.ttf
-Source2:        %{url}/I.Ming/raw/master/%{version}/I.MingCP-%{version}.ttf
-Source3:        %{url}/I.Ming/raw/master/%{version}/I.MingVar-%{version}.ttf
-Source4:        %{url}/I.Ming/raw/master/%{version}/I.MingVarCP-%{version}.ttf
-Source5:        %{url}/I.Ming/raw/master/%{version}/PMingI.U-%{version}.ttf
-Source6:        %{url}/I.Ming/raw/master/%{version}/PMingI.UVar-%{version}.ttf
+Source1:        %{url}/raw/master/%{version}/I.Ming-%{version}.ttf
+Source2:        %{url}/raw/master/%{version}/I.MingCP-%{version}.ttf
+Source3:        %{url}/raw/master/%{version}/I.MingVar-%{version}.ttf
+Source4:        %{url}/raw/master/%{version}/I.MingVarCP-%{version}.ttf
+Source5:        %{url}/raw/master/%{version}/PMingI.U-%{version}.ttf
+Source6:        %{url}/raw/master/%{version}/PMingI.UVar-%{version}.ttf
 BuildRequires:  fontpackages-devel
 BuildArch:      noarch
 
