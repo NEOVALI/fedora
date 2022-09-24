@@ -44,4 +44,5 @@ install -m 644 %{S:6} %{buildroot}%{_ttfontsdir}
 %dir %{_ttfontsdir}
 
 %changelog
-
+* Sun Sep 25 2022 five <156211398@qq.com> - 8.00-1
+- update to 8.00

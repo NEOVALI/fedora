@@ -73,4 +73,5 @@ install -m 0644 "icon.svg" "%{buildroot}/%{_datadir}/pixmaps/%{name}.svg"
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
-
+* Sun Sep 25 2022 five <156211398@qq.com> - 1.3.1-1
+- update to 1.3.1
