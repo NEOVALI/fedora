@@ -14,15 +14,15 @@ Requires:       gtk3
 OpenSource, Compact and Material Designed Cursor Set
 
 %prep
-%autosetup -n %{source_name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 
 %install
 %__rm -rf %{buildroot}
 %__mkdir -p %{buildroot}%{_datadir}/icons
-for theme in $(ls %{_builddir}/%{source_name}-%{version}/themes); do
-  %__mv %{_builddir}/%{source_name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
+for theme in $(ls %{_builddir}/%{name}-%{version}/themes); do
+  %__mv %{_builddir}/%{name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
   %__chmod 0755 %{buildroot}%{_datadir}/icons/${theme}
 done
 
