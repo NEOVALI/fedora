@@ -54,7 +54,7 @@ install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/%{_bindir} # cla
 install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir} # clash-meta
 
 # buildroot/usr/lib/resources
-install -d %{buildroot}/%{_libdir}%{name}/resources 
+install -d %{buildroot}/%{_libdir}/%{name}/resources 
 install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}%{name}/resources
 
 # icons
@@ -74,10 +74,10 @@ install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 %{_bindir}/%{name}
 %{_bindir}/clash
 %{_bindir}/clash-meta
-%dir %{_libdir}%{name}/resources
+%dir %{_libdir}/%{name}/resources
 %{_libdir}%{name}/resources/Country.mmdb
-%{buildroot}/%{_datadir}/applications/%{name}.desktop
-%{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 
 %changelog
