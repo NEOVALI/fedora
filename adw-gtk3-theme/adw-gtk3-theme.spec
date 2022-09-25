@@ -22,6 +22,7 @@ cd adw-gtk3-3.7
 %meson_build
 
 %install
+cd adw-gtk3-3.7
 %meson_install
 
 %post
