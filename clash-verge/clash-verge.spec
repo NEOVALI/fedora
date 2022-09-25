@@ -22,7 +22,7 @@ BuildRequires:  moreutils
 BuildRequires:  rust-openssl+default-devel
 BuildRequires:  webkit2gtk3
 BuildRequires:  libappindicator-gtk3 
-BuildRequires:  yarnpkg
+# BuildRequires:  yarnpkg
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
@@ -35,6 +35,7 @@ A Clash GUI based on tauri.
 
 %prep
 %setup -n %{name}-%{version}
+cp %{S:1} ./
 
 
 %build
@@ -45,16 +46,24 @@ yarn build
 
 
 %install
+
+# install bin
 install -d %{buildroot}/%{_bindir}
-install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir}
-install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/%{_bindir}
-install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir}
-install -d %{buildroot}/%{_libdir}%{name}/resources
+install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir} # clash-verge
+install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/%{_bindir} # clash
+install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir} # clash-meta
+
+# buildroot/usr/lib/resources
+install -d %{buildroot}/%{_libdir}%{name}/resources 
 install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}%{name}/resources
-install -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps
-install -Dm644 ./src/assets/image/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
-install -d %{buildroot}/%{_datadir}/applications
-install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
+
+# icons
+install -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps 
+install -Dm644 ./src/assets/image/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg 
+
+# 桌面图标
+install -d %{buildroot}/%{_datadir}/applications 
+install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 
 
 %post
