@@ -36,7 +36,6 @@ A Clash GUI based on tauri.
 %define BUILD_DIR %{_builddir}/%{name}-%{version}/
 
 %build
-cd %{BUILD_DIR}
 # build
 yarn install
 yarn run check
