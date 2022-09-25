@@ -51,8 +51,8 @@ yarn build
 %install
 cd %{name}-%{version}
 install -Dm755 src-tauri/target/release/%{name} -t %{buildroot}/usr/bin
-install -Dm755 src-tauri/target/release/clash -t %{buildroot}/usr/bin
-install -Dm755 src-tauri/target/release/clash-meta -t %{buildroot}/usr/bin
+install -Dm755 src-tauri/sidecar/clash-x86_64-unknown-linux-gnu %{buildroot}/usr/bin/clash
+install -Dm755 src-tauri/sidecar/clash-meta-x86_64-unknown-linux-gnu %{buildroot}/usr/bin/clash-meta
 install -d %{buildroot}/usr/lib/%{name}
 install -d %{buildroot}/usr/lib/%{name}/resources
 install -Dm644 src-tauri/resources/Country.mmdb -t %{buildroot}/usr/lib/%{name}/resources
