@@ -17,16 +17,16 @@ BuildArch:      noarch
 SARASA GOTHIC, a CJK programming font based on Iosevka, Inter and Source Han Sans.
 
 %prep
-%setup -qcn %{name}-%{version}
+%setup -c -n %{name}-%{version}
 cp %{S:1} ./
-%define _ttfontsdir /usr/share/fonts/sarasa-gothic
+%define _ttfontsdir %{_datadir}/fonts/sarasa-gothic
 
 %build
 
 %install
-install -d %{buildroot}%{_ttfontsdir}
+install -d %{buildroot}/%{_ttfontsdir}
 # by default install command uses 755 umask
-install -m 644 *.ttc %{buildroot}%{_ttfontsdir}
+install -m 644 *.ttc %{buildroot}/%{_ttfontsdir}
 
 %post
 %postun

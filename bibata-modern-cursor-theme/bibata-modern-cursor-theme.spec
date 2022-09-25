@@ -15,24 +15,31 @@ Requires:       gtk3
 %description
 OpenSource, Compact and Material Designed Cursor Set
 
+
 %prep
 %autosetup -c -n %{name}-%{version}
 cp %{S:1} ./
 cp %{S:2} ./
-%define _iconsdir /usr/share/icons/
+%define _iconsdir %{_datadir}/icons/
+
 
 %build
 
+
 %install
-install -d %{buildroot}%{_iconsdir}
-cp -r ./Bibata-* %{buildroot}%{_iconsdir}
+install -d %{buildroot}/%{_iconsdir} # 创建BUILDROOT/usr/share/icons/文件夹
+install -Dm644 ./Bibata-* -t %{buildroot}/%{_iconsdir} # 安装图标
 
 %post
+
+
 %postun
+
 
 %files
 %license LICENSE
 %doc README.md
 %{_iconsdir}/Bibata*
+
 
 %changelog

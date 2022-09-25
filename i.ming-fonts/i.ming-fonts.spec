@@ -27,13 +27,13 @@ I.明體（I.Ming）乃係一套依照傳承字形標準化文件《傳承字形
 cp %{S:0} ./LICENSE
 
 %install
-install -d %{buildroot}%{_ttfontsdir}
-install -m 644 %{S:1} %{buildroot}%{_ttfontsdir}
-install -m 644 %{S:2} %{buildroot}%{_ttfontsdir}
-install -m 644 %{S:3} %{buildroot}%{_ttfontsdir}
-install -m 644 %{S:4} %{buildroot}%{_ttfontsdir}
-install -m 644 %{S:5} %{buildroot}%{_ttfontsdir}
-install -m 644 %{S:6} %{buildroot}%{_ttfontsdir}
+install -d %{buildroot}/%{_ttfontsdir}
+install -m 644 %{S:1} %{buildroot}/%{_ttfontsdir}
+install -m 644 %{S:2} %{buildroot}/%{_ttfontsdir}
+install -m 644 %{S:3} %{buildroot}/%{_ttfontsdir}
+install -m 644 %{S:4} %{buildroot}/%{_ttfontsdir}
+install -m 644 %{S:5} %{buildroot}/%{_ttfontsdir}
+install -m 644 %{S:6} %{buildroot}/%{_ttfontsdir}
 
 %post
 %postun

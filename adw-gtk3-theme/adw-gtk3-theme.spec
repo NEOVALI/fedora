@@ -4,28 +4,35 @@ Release:        1%{?dist}
 Summary:        The theme from libadwaita ported to GTK-3
 License:        GPLv2+
 URL:            https://github.com/lassekongo83/adw-gtk3
-BuildRequires: sassc
-BuildRequires: git
-BuildRequires: meson
-BuildRequires: ninja-build
+Source0:        %{url}/adw-gtk3/archive/refs/tags/v%{version}.tar.gz
+BuildRequires:  sassc
+BuildRequires:  git
+BuildRequires:  meson
+BuildRequires:  ninja-build
 
 %description
 The theme from libadwaita ported to GTK-3
 
 %prep
-git clone --recurse-submodules https://github.com/lassekongo83/adw-gtk3.git
+%autosetup -c -n %{name}-%{version}
 
 %build
-cd adw-gtk3
-git checkout tags/v%{version}
+cd adw-gtk3-%{version}
 %meson
 %meson_build
 
 %install
-cd adw-gtk3
 %meson_install
 
+%post
+
+
+%postun
+
+
 %files
+%dir %{_datadir}/themes/adw-gtk3
+%dir %{_datadir}/themes/adw-gtk3-dark
 %{_datadir}/themes/adw-gtk3/*
 %{_datadir}/themes/adw-gtk3-dark/*
 
