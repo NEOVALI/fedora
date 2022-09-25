@@ -7,7 +7,7 @@ Release:        1%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Se
 License:        GNU General Public License v3.0
 URL:            https://github.com/ful1e5/Bibata_Cursor
-Source0:        %{url}/archive/v%{version}.tar.gz
+Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 Source1:        %{url}/releases/download/v%{version}/bitmaps.zip
 
 BuildArch:      noarch
@@ -60,17 +60,17 @@ done
 %{_datadir}/icons/*
 
 %changelog
-* Sun 05 Jun 2022 07:54:12 PM EDT Peter Wu
+* Sun 05 Jun 2022 19:54:12 Peter Wu
 - Use bitmaps.zip to build
 
-* Mon Jul 12 09:44:23 AM EDT 2021 Peter Wu
+* Mon Jul 12 09:44:23 2021 Peter Wu
 - New Release - v1.1.2
 
-* Fri Mar 26 09:52:42 AM EDT 2021 Peter Wu
+* Fri Mar 26 09:52:42 2021 Peter Wu
 - New Release - v1.1.1
 
-* Fri Feb 26 09:45:42 EST 2021 Peter Wu
+* Fri Feb 26 09:45:42 2021 Peter Wu
 - New Release - v1.1.0
 
-* Tue Nov 17 09:42:13 EST 2020 Peter Wu <peterwu@hotmail.com>
+* Tue Nov 17 09:42:13 2020 Peter Wu <peterwu@hotmail.com>
 - New Release - v1.0.3
