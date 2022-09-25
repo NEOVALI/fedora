@@ -33,6 +33,9 @@ BuildArch:      x86_64
 A Clash GUI based on tauri.
 
 
+%define debug_package %{nil}
+
+
 %prep
 %setup -n %{name}-%{version}
 cp %{S:1} ./
@@ -55,7 +58,7 @@ install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir} 
 
 # buildroot/usr/lib/resources
 install -d %{buildroot}/%{_libdir}/%{name}/resources 
-install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}%{name}/resources
+install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}/%{name}/resources
 
 # icons
 install -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps 
@@ -75,7 +78,7 @@ install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 %{_bindir}/clash
 %{_bindir}/clash-meta
 %dir %{_libdir}/%{name}/resources
-%{_libdir}%{name}/resources/Country.mmdb
+%{_libdir}/%{name}/resources/Country.mmdb
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
