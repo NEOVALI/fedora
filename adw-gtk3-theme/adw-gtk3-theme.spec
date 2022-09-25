@@ -14,10 +14,9 @@ BuildRequires:  ninja-build
 The theme from libadwaita ported to GTK-3
 
 %prep
-%autosetup -c -n %{name}-%{version}
+%autosetup -c 
 
 %build
-cd adw-gtk3-%{version}
 %meson
 %meson_build
 
