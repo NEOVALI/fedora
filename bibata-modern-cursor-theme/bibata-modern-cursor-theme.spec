@@ -5,6 +5,8 @@ Summary:        OpenSource, Compact and Material Designed Cursor Set
 License:        GNU General Public License v3.0
 URL:            https://github.com/ful1e5/Bibata_Cursor
 Source0:        %{url}/releases/download/v%{version}/Bibata-Modern.tar.gz
+Source1:        %{url}/raw/main/LICENSE
+Source2:        %{url}/raw/main/README.md
 
 BuildArch:      noarch
 
@@ -14,24 +16,24 @@ Requires:       gtk3
 OpenSource, Compact and Material Designed Cursor Set
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -qcn %{name}-%{version}
+cp %{S:1} ./
+cp %{S:2} ./
+%define _iconsdir /usr/share/icons/bibata-modern
 
 %build
 
 %install
-%__rm -rf %{buildroot}
-%__mkdir -p %{buildroot}%{_datadir}/icons
-for theme in $(ls %{_builddir}/%{name}-%{version}/themes); do
-  %__mv %{_builddir}/%{name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
-  %__chmod 0755 %{buildroot}%{_datadir}/icons/${theme}
-done
+install -d %{buildroot}%{_iconsdir}
+install -m 644 ./Bibata-* %{buildroot}%{_iconsdir}
 
-%clean
-%__rm -rf %{buildroot}
+%post
+%postun
 
 %files
 %license LICENSE
 %doc README.md
-%{_datadir}/icons/*
+%dir %{_iconsdir}
+%{_iconsdir}/*
 
 %changelog
