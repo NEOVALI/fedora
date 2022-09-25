@@ -22,7 +22,7 @@ BuildRequires:  moreutils
 BuildRequires:  rust-openssl+default-devel
 BuildRequires:  webkit2gtk3
 BuildRequires:  libappindicator-gtk3 
-# BuildRequires:  yarnpkg
+BuildRequires:  yarnpkg
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
