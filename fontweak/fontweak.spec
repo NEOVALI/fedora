@@ -46,24 +46,24 @@ A front-end for fontconfig. Setup perfect font effects, fast and easily.
 
 %install
 # jars
-install -dm 0755 "%{buildroot}/%{_datadir}/%{name}"
+install -dm 755 "%{buildroot}/%{_datadir}/%{name}"
 install -m 0644 "dist/fontweak.jar" "%{buildroot}/%{_datadir}/%{name}/"
 
 # startscript
-install -dm 0755 "%{buildroot}/%{_bindir}"
+install -dm 755 "%{buildroot}/%{_bindir}"
 cat >"%{buildroot}/%{_bindir}/%{name}" << EOF
 #!/bin/sh
 exec java -jar "%{_datadir}/%{name}/%{name}.jar"
 EOF
-chmod 0755 "%{buildroot}/%{_bindir}/%{name}"
+chmod 755 "%{buildroot}/%{_bindir}/%{name}"
 
 # .desktop
-install -dm 0755 "%{buildroot}/%{_datadir}/applications"
-install -m 0644 "%{name}.desktop" "%{buildroot}/%{_datadir}/applications/"
+install -dm 755 "%{buildroot}/%{_datadir}/applications"
+install -m 644 "%{name}.desktop" "%{buildroot}/%{_datadir}/applications/"
 
 # icon
-install -dm 0755 "%{buildroot}/%{_datadir}/pixmaps"
-install -m 0644 "icon.svg" "%{buildroot}/%{_datadir}/pixmaps/%{name}.svg"
+install -dm 755 "%{buildroot}/%{_datadir}/pixmaps"
+install -m 644 "icon.svg" "%{buildroot}/%{_datadir}/pixmaps/%{name}.svg"
 
 %files
 %defattr(-,root,root)

@@ -28,7 +28,8 @@ cp %{S:2} ./
 
 %install
 install -d %{buildroot}/%{_iconsdir} # 创建BUILDROOT/usr/share/icons/文件夹
-install -Dm644 ./Bibata-* -t %{buildroot}/%{_iconsdir} # 安装图标
+cp -r Bibata-* %{buildroot}/%{_iconsdir} # 安装图标
+
 
 %post
 
