@@ -20,6 +20,7 @@ BuildRequires:  rust-cairo-rs+default-devel
 BuildRequires:  rust-atk-sys+default-devel
 BuildRequires:  rust-gdk-sys+default-devel
 BuildRequires:  moreutils
+BuildRequires:  rust-openssl+default-devel
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
