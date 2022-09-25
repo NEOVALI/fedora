@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        The theme from libadwaita ported to GTK-3
 License:        GPLv2+
 URL:            https://github.com/lassekongo83/adw-gtk3
-Source0:        %{url}/adw-gtk3/archive/refs/tags/v%{version}.tar.gz
+Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires:  sassc
 BuildRequires:  git
 BuildRequires:  meson
