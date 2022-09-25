@@ -16,7 +16,7 @@ Requires:       gtk3
 OpenSource, Compact and Material Designed Cursor Set
 
 %prep
-%autosetup -qcn %{name}-%{version}
+%autosetup -q -c -n %{name}-%{version}
 cp %{S:1} ./
 cp %{S:2} ./
 %define _iconsdir /usr/share/icons/bibata-modern
