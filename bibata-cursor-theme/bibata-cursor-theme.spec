@@ -3,7 +3,7 @@
 
 Name:           bibata-cursor-themes
 Version:        1.1.2
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Set
 
 License:        GNU General Public License v3.0
