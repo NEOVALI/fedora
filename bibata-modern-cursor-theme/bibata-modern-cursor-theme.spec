@@ -25,7 +25,7 @@ cp %{S:2} ./
 
 %install
 install -d %{buildroot}%{_iconsdir}
-install -m 644 ./Bibata-* %{buildroot}%{_iconsdir}
+cp -r ./Bibata-* %{buildroot}%{_iconsdir}
 
 %post
 %postun
