@@ -21,6 +21,11 @@ BuildRequires:  rust-atk-sys+default-devel
 BuildRequires:  rust-gdk-sys+default-devel
 BuildRequires:  moreutils
 BuildRequires:  rust-openssl+default-devel
+BuildRequires:  webkit2gtk3
+BuildRequires:  libappindicator-gtk3 
+BuildRequires:  libindicator-gtk3 
+BuildRequires:  libdbusmenu
+BuildRequires:  libdbusmenu-gtk3
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
@@ -44,7 +49,7 @@ yarn run check
 yarn build
 
 %install
-
+cd %{name}-%{version}
 install -Dm755 src-tauri/target/release/%{name} -t %{buildroot}/usr/bin
 install -Dm755 src-tauri/target/release/clash -t %{buildroot}/usr/bin
 install -Dm755 src-tauri/target/release/clash-meta -t %{buildroot}/usr/bin
