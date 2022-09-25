@@ -47,7 +47,7 @@ A front-end for fontconfig. Setup perfect font effects, fast and easily.
 %install
 # jars
 install -dm 755 "%{buildroot}/%{_datadir}/%{name}"
-install -m 0644 "dist/fontweak.jar" "%{buildroot}/%{_datadir}/%{name}/"
+install -m 644 "dist/fontweak.jar" "%{buildroot}/%{_datadir}/%{name}/"
 
 # startscript
 install -dm 755 "%{buildroot}/%{_bindir}"
