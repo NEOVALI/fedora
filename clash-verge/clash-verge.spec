@@ -5,56 +5,67 @@ Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
-Source1:        motrix-launcher.sh
-Source2:        motrix.desktop
-Source3:        motrix.xml
+Source1:        https://github.com/valig5/fedora/raw/main/clash-verge/clash-verge.desktop
+
 BuildRequires:  nodejs
 BuildRequires:  npm
 BuildRequires:  yarnpkg
 BuildRequires:  cargo
 BuildRequires:  rust
-BuildRequires:  webkit2gtk3-devel
 BuildRequires:  wget
+BuildRequires:  webkit2gtk3-devel
+BuildRequires:  rust-gobject-sys+default-devel
+BuildRequires:  rust-pango+default-devel
+BuildRequires:  rust-cairo-rs+default-devel 
+BuildRequires:  rust-atk-sys+default-devel
+BuildRequires:  rust-gdk-sys+default-devel
+BuildRequires:  moreutils
 
-Requires:       webkit2gtk3 
+Requires:       webkit2gtk3
+Requires:       libappindicator-gtk3 
+Requires:       libindicator-gtk3 
+Requires:       libdbusmenu
+Requires:       libdbusmenu-gtk3
 
-%undefine _missing_build_ids_terminate_build
-%undefine _debugsource_packages
-%define _build_id_links none
 
 %description
 A Clash GUI based on tauri.
 
 %prep
-%setup -q -n %{name}-%{version} -a 0
+%setup -c -n %{name}-%{version}
 %define BUILD_DIR %{_builddir}/%{name}-%{version}/
 
 %build
 cd %{BUILD_DIR}
-# real build
+# build
 yarn install
 yarn run check
 yarn build
 
 %install
-mkdir -p "%{buildroot}/usr/bin"
-cd "%{BUILD_DIR}"
-install -Dm644 release/linux-unpacked/resources/app.asar -t "%{buildroot}/usr/lib/motrix/"
-cp -r release/linux-unpacked/resources/engine "%{buildroot}/usr/lib/motrix/"
-install -Dm644 static/512x512.png "%{buildroot}/usr/share/icons/hicolor/512x512/apps/motrix.png"
-install -Dm755 %{SOURCE1} "%{buildroot}/usr/bin/motrix"
-install -Dm644 %{SOURCE2} "%{buildroot}/usr/share/applications/motrix.desktop"
-install -Dm644 %{SOURCE3} "%{buildroot}/usr/share/mime/packages/motrix.xml"
+
+install -Dm755 src-tauri/target/release/%{name} -t %{buildroot}/usr/bin
+install -Dm755 src-tauri/target/release/clash -t %{buildroot}/usr/bin
+install -Dm755 src-tauri/target/release/clash-meta -t %{buildroot}/usr/bin
+install -d %{buildroot}/usr/lib/%{name}
+install -d %{buildroot}/usr/lib/%{name}/resources
+install -Dm644 src-tauri/resources/Country.mmdb -t %{buildroot}/usr/lib/%{name}/resources
+install -Dm644 src/assets/image/logo.svg %{buildroot}/usr/share/icons/hicolor/scalable/apps/%{name}.svg
+install -Dm644 %{S:1} -t %{buildroot}/usr/share/applications
+
 
 %post
 %postun
 
 %files
-%{_bindir}/motrix
-/usr/lib/motrix
-/usr/share/applications/motrix.desktop
-/usr/share/icons/hicolor/512x512/apps/motrix.png
-/usr/share/mime/packages/motrix.xml
+/usr/bin/%{name}
+/usr/bin/clash
+/usr/bin/clash-meta
+%dir /usr/lib/%{name}/resources
+/usr/lib/%{name}/resources/Country.mmdb
+/usr/share/applications/%{name}.desktop
+/usr/share/icons/hicolor/scalable/apps/%{name}.svg
+
 
 %changelog
 

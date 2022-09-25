@@ -1,4 +1,4 @@
-Name:           bibata-modern-cursor-themes
+Name:           bibata-modern-cursor-theme
 Version:        1.1.2
 Release:        1%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Set
@@ -19,7 +19,7 @@ OpenSource, Compact and Material Designed Cursor Set
 %autosetup -c -n %{name}-%{version}
 cp %{S:1} ./
 cp %{S:2} ./
-%define _iconsdir /usr/share/icons/bibata-modern
+%define _iconsdir /usr/share/icons/
 
 %build
 
@@ -33,7 +33,6 @@ cp -r ./Bibata-* %{buildroot}%{_iconsdir}
 %files
 %license LICENSE
 %doc README.md
-%dir %{_iconsdir}
-%{_iconsdir}/*
+%{_iconsdir}/Bibata*
 
 %changelog
