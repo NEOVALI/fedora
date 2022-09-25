@@ -9,6 +9,7 @@ BuildRequires:  sassc
 BuildRequires:  git
 BuildRequires:  meson
 BuildRequires:  ninja-build
+
 BuildArch:      noarch
 
 %description

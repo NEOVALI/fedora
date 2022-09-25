@@ -23,28 +23,25 @@ BuildRequires:  moreutils
 BuildRequires:  rust-openssl+default-devel
 BuildRequires:  webkit2gtk3
 BuildRequires:  libappindicator-gtk3 
-BuildRequires:  libindicator-gtk3 
-BuildRequires:  libdbusmenu
-BuildRequires:  libdbusmenu-gtk3
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
-Requires:       libindicator-gtk3 
-Requires:       libdbusmenu
-Requires:       libdbusmenu-gtk3
 
 
 %description
 A Clash GUI based on tauri.
 
+
 %prep
-%setup -c -n %{name}-%{version}
+%setup -n %{name}-%{version}
+
 
 %build
 # build
 yarn install
 yarn run check
 yarn build
+
 
 %install
 cd %{name}-%{version}
@@ -60,6 +57,7 @@ install -Dm644 %{S:1} -t %{buildroot}/usr/share/applications
 
 %post
 %postun
+
 
 %files
 /usr/bin/%{name}
