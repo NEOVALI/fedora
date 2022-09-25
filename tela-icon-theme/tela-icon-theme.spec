@@ -15,7 +15,7 @@ A flat colorful design icon theme
 
 
 %prep
-%setup -q -n tela-icon-theme
+%setup -qcn %{name}-%{version}
 
 
 %build
