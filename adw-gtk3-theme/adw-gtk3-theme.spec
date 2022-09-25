@@ -13,6 +13,8 @@ BuildRequires:  ninja-build
 %description
 The theme from libadwaita ported to GTK-3
 
+%global debug_package %{nil}
+
 %prep
 %autosetup -c -n %{name}-%{version}
 
@@ -38,5 +40,12 @@ cd adw-gtk3-3.7
 %{_datadir}/themes/adw-gtk3-dark/*
 
 %changelog
+
+
+
+
+
+
+
 * Sun Sep 25 2022 five <156211398@qq.com> - 3.7-1
 - update to 3.7
