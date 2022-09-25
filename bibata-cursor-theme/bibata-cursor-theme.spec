@@ -60,17 +60,3 @@ done
 %{_datadir}/icons/*
 
 %changelog
-* Sun 05 Jun 2022 19:54:12 Peter Wu
-- Use bitmaps.zip to build
-
-* Mon Jul 12 09:44:23 2021 Peter Wu
-- New Release - v1.1.2
-
-* Fri Mar 26 09:52:42 2021 Peter Wu
-- New Release - v1.1.1
-
-* Fri Feb 26 09:45:42 2021 Peter Wu
-- New Release - v1.1.0
-
-* Tue Nov 17 09:42:13 2020 Peter Wu <peterwu@hotmail.com>
-- New Release - v1.0.3
