@@ -22,11 +22,12 @@ BuildRequires:  moreutils
 BuildRequires:  rust-openssl+default-devel
 BuildRequires:  webkit2gtk3
 BuildRequires:  libappindicator-gtk3 
-BuildRequires:  sudo
+BuildRequires:  yarnpkg
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
 
+BuildArch:      x86_64
 
 %description
 A Clash GUI based on tauri.
@@ -37,7 +38,6 @@ A Clash GUI based on tauri.
 
 
 %build
-sudo npm install yarn -g
 # build
 yarn install
 yarn run check
