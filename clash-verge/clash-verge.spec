@@ -9,7 +9,6 @@ Source1:        https://github.com/valig5/fedora/raw/main/clash-verge/clash-verg
 
 BuildRequires:  nodejs
 BuildRequires:  npm
-BuildRequires:  yarnpkg
 BuildRequires:  cargo
 BuildRequires:  rust
 BuildRequires:  wget
@@ -37,6 +36,8 @@ A Clash GUI based on tauri.
 
 
 %build
+npm --global install yarn pnpm
+corepack enable
 # build
 yarn install
 yarn run check
@@ -44,15 +45,16 @@ yarn build
 
 
 %install
-cd %{name}-%{version}
-install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/usr/bin
-install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/usr/bin
-install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/usr/bin
-install -d %{buildroot}/usr/lib/%{name}
-install -d %{buildroot}/usr/lib/%{name}/resources
-install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/usr/lib/%{name}/resources
-install -Dm644 ./src/assets/image/logo.svg %{buildroot}/usr/share/icons/hicolor/scalable/apps/%{name}.svg
-install -Dm644 %{S:1} -t %{buildroot}/usr/share/applications
+install -d %{buildroot}/%{_bindir}
+install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir}
+install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/%{_bindir}
+install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir}
+install -d %{buildroot}/%{_libdir}%{name}/resources
+install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}%{name}/resources
+install -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps
+install -Dm644 ./src/assets/image/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+install -d %{buildroot}/%{_datadir}/applications
+install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
@@ -60,13 +62,13 @@ install -Dm644 %{S:1} -t %{buildroot}/usr/share/applications
 
 
 %files
-/usr/bin/%{name}
-/usr/bin/clash
-/usr/bin/clash-meta
-%dir /usr/lib/%{name}/resources
-/usr/lib/%{name}/resources/Country.mmdb
-/usr/share/applications/%{name}.desktop
-/usr/share/icons/hicolor/scalable/apps/%{name}.svg
+%{_bindir}/%{name}
+%{_bindir}/clash
+%{_bindir}/clash-meta
+%dir %{_libdir}%{name}/resources
+%{_libdir}%{name}/resources/Country.mmdb
+%{buildroot}/%{_datadir}/applications/%{name}.desktop
+%{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 
 %changelog
