@@ -36,8 +36,8 @@ A Clash GUI based on tauri.
 
 
 %build
-sudo npm --global install yarn pnpm
-sudo corepack enable
+corepack enable
+packageManager": "yarn"
 # build
 yarn install
 yarn run check
