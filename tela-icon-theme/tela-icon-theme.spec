@@ -26,6 +26,7 @@ cp %{S:1} ./LICENSE
 
 %install
 install -d %{buildroot}%{_iconsdir}
+cd %{name}-%{version}
 ./install.sh -a -d %{buildroot}%{_iconsdir}
 
 %files
