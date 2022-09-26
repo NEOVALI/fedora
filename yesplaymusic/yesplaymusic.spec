@@ -43,7 +43,7 @@ install -d %{buildroot}/%{_bindir}
 install -d %{buildroot}/%{_datadir}/applications/
 
 cp -r * %{buildroot}/opt/yesplaymusic
-install -Dm644 %{S:1} %{buildroot}/opt/yesplaymusic.png
+install -Dm644 %{S:1} %{buildroot}/opt/yesplaymusic/yesplaymusic.png
 install -Dm644 %{S:2} %{buildroot}/%{_datadir}/applications/yesplaymusic.desktop
 
 

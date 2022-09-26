@@ -43,7 +43,7 @@ install -d %{buildroot}/%{_bindir}
 install -d %{buildroot}/%{_datadir}/applications/
 
 cp -r * %{buildroot}/opt/icalingua
-install -Dm644 %{S:1} %{buildroot}/opt/icalingua.png
+install -Dm644 %{S:1} %{buildroot}/opt/icalingua/icalingua.png
 install -Dm644 %{S:2} %{buildroot}/%{_datadir}/applications/icalingua.desktop
 
 
