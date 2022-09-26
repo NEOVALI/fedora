@@ -5,7 +5,6 @@ Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
-Source1:        https://github.com/valig5/fedora/raw/main/clash-verge/clash-verge.desktop
 
 BuildRequires:  nodejs
 BuildRequires:  npm
@@ -38,7 +37,6 @@ A Clash GUI based on tauri.
 
 %prep
 %setup -n %{name}-%{version}
-cp %{S:1} ./
 
 
 %build
@@ -50,13 +48,13 @@ yarn build
 
 %install
 
-# install bin
+# bin
 install -d %{buildroot}/%{_bindir}
 install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir} # clash-verge
 install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/%{_bindir} # clash
 install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir} # clash-meta
 
-# buildroot/usr/lib/resources
+# /usr/lib64/resources
 install -d %{buildroot}/%{_libdir}/%{name}/resources 
 install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}/%{name}/resources
 
@@ -64,7 +62,7 @@ install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/%{_libdir}/%{n
 install -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps 
 install -Dm644 ./src/assets/image/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg 
 
-# 桌面图标
+# .deskop
 install -d %{buildroot}/%{_datadir}/applications 
 install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 
@@ -84,4 +82,7 @@ install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 
 
 %changelog
-
+* Sat Sep 26 2022 five <156211398@qq.com> - 1.1.0
+- upstream update 1.1.0
+* Sun Sep 25 2022 five <156211398@qq.com> - 1.0.6
+- initial upload
