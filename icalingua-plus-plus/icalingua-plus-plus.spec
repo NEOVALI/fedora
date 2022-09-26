@@ -1,4 +1,4 @@
-Name:           icalingua++
+Name:           icalingua-plus-plus
 Version:        2.7.3
 Release:        1%{?dist}
 Summary:        A client for QQ and more.
@@ -18,10 +18,11 @@ Requires:       libappindicator-gtk3
 %{summary}
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -c -n %{name}-%{version}
 %define _pnpm "node %{buildsubdir}/node_modules/pnpm/bin/pnpm.cjs"
 
 %build
+cd Icalingua-plus-plus-2.7.3
 npm install pnpm
 %{_pnpm} install
 %{_pnpm} run build:dir
