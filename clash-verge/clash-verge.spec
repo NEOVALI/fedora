@@ -1,10 +1,11 @@
 Name:           clash-verge
 Version:        1.1.0
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
+Source1:        https://github.com/valig5/fedora/raw/main/clash-verge/clash-verge.desktop
 
 BuildRequires:  nodejs
 BuildRequires:  npm
@@ -64,10 +65,11 @@ install -Dm644 ./src/assets/image/logo.svg %{buildroot}/%{_datadir}/icons/hicolo
 
 # .deskop
 install -d %{buildroot}/%{_datadir}/applications 
-install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
+install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
+
 %postun
 
 
@@ -83,7 +85,7 @@ install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 
 
 %changelog
-* Sat Sep 26 2022 five <156211398@qq.com> - 1.1.0
+* Mon Sep 26 2022 five <156211398@qq.com> - 1.1.0
 - upstream update 1.1.0
 * Sun Sep 25 2022 five <156211398@qq.com> - 1.0.6
 - initial upload
