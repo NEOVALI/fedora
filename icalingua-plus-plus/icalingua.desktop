@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=chat;Network;
 Exec=icalingua %u
-Icon=/opt/icalingua.png
+Icon=/opt/icalingua/icalingua.png
 Name=Icalingua
 Comment=A Linux client for QQ and more
 StartupNotify=true
