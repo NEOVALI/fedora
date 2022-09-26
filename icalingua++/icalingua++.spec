@@ -9,7 +9,7 @@ Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  nodejs
 BuildRequires:  npm
-BuildRequires:  openssl <= 2.0.0
+BuildRequires:  openssl
 
 Requires:       gtk3
 Requires:       libappindicator-gtk3
