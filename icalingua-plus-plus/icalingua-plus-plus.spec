@@ -41,10 +41,9 @@ cp %{S:3} ./
 install -d %{buildroot}/opt/icalingua
 install -d %{buildroot}/%{_bindir}
 install -d %{buildroot}/%{_datadir}/applications/
-install -d %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps
 
 cp -r * %{buildroot}/opt/icalingua
-install -Dm644 %{S:1} %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps/icalingua.png
+install -Dm644 %{S:1} %{buildroot}/opt/icalingua.png
 install -Dm644 %{S:2} %{buildroot}/%{_datadir}/applications/icalingua.desktop
 
 
@@ -60,7 +59,6 @@ rm -f %{_bindir}/icalingua
 %license LICENSE
 %dir /opt/icalingua
 /opt/icalingua/*
-%{_datadir}/icons/hicolors/512x512/apps/icalingua.png
 %{_datadir}/applications/icalingua.desktop
 
 

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Music;AudioVideo;Player;
 Exec=yesplaymusic %u
-Icon=yesplaymusic
+Icon=/opt/yesplaymusic.png
 Name=YesPlayMusic
 Comment=A Linux client for QQ and more
 Comment[zh_CN]=高颜值的第三方网易云播放器

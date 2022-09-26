@@ -41,10 +41,9 @@ cp %{S:3} ./
 install -d %{buildroot}/opt/yesplaymusic
 install -d %{buildroot}/%{_bindir}
 install -d %{buildroot}/%{_datadir}/applications/
-install -d %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps
 
 cp -r * %{buildroot}/opt/yesplaymusic
-install -Dm644 %{S:1} %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps/yesplaymusic.png
+install -Dm644 %{S:1} %{buildroot}/opt/yesplaymusic.png
 install -Dm644 %{S:2} %{buildroot}/%{_datadir}/applications/yesplaymusic.desktop
 
 
@@ -60,7 +59,6 @@ rm -f %{_bindir}/yesplaymusic
 %license LICENSE
 %dir /opt/yesplaymusic
 /opt/yesplaymusic/*
-%{_datadir}/icons/hicolors/512x512/apps/yesplaymusic.png
 %{_datadir}/applications/yesplaymusic.desktop
 
 
