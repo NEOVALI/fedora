@@ -10,6 +10,7 @@ Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires:  nodejs
 BuildRequires:  npm
 BuildRequires:  openssl
+BuildRequires:  make
 
 Requires:       gtk3
 Requires:       libappindicator-gtk3
