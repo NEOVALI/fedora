@@ -72,6 +72,7 @@ install -Dm644 ./%{name}.desktop -t %{buildroot}/%{_datadir}/applications
 
 
 %files
+%license LICENSE
 %{_bindir}/%{name}
 %{_bindir}/clash
 %{_bindir}/clash-meta
