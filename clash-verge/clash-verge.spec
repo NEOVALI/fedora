@@ -69,6 +69,8 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
+setcap cap_net_admin,cap_net_raw+ep %{_bindir}/clash
+setcap cap_net_admin,cap_net_raw+ep %{_bindir}/clash-meta
 
 %postun
 
