@@ -22,7 +22,7 @@ Requires:       libappindicator-gtk3
 %define _pnpm "node %{buildsubdir}/node_modules/pnpm/bin/pnpm.cjs"
 
 %build
-cd Icalingua-plus-plus-2.7.3
+cd Icalingua-plus-plus-%{version}
 npm install pnpm
 %{_pnpm} install
 %{_pnpm} run build:dir
