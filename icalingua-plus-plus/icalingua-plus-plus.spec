@@ -3,44 +3,57 @@ Version:        2.7.3
 Release:        1%{?dist}
 Summary:        A client for QQ and more.
 
+
 License:        AGPL v3
 URL:            https://github.com/Icalingua-plus-plus/Icalingua-plus-plus
-Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
+Source0:        %{url}/releases/download/v%{version}/icalingua-%{version}.tar.xz
+Source1:        %{url}/raw/development/pkgres/512x512.png
+Source2:        %{url}/raw/development/pkgres/icalingua.desktop
+Source3:        %{url}/raw/development/LICENSE
 
-BuildRequires:  nodejs
-BuildRequires:  npm
-BuildRequires:  openssl
-BuildRequires:  make
+
+BuildRequires:  bash
+BuildRequires:  tar
+
 
 Requires:       gtk3
 Requires:       libappindicator-gtk3
 
+
 %description
 %{summary}
 
+
+%define debug_package %{nil}
+
+
 %prep
-%autosetup -c -n %{name}-%{version}
-%define _pnpm "node %{buildsubdir}/node_modules/pnpm/bin/pnpm.cjs"
+%autosetup -n icalingua-%{version}
+cp %{S:3} ./
+
 
 %build
-cd Icalingua-plus-plus-%{version}
-npm install pnpm
-%{_pnpm} install
-%{_pnpm} run build:dir
-
+# nothing to build
 
 
 %install
 install -d %{buildroot}/opt/icalingua
-install -d %{buildroot}/%{_libdir}
 install -d %{buildroot}/%{_bindir}
 install -d %{buildroot}/%{_datadir}/applications/
 install -d %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps
 
-cp -a icalingua/build/linux-x86_64-unpacked/* %{buildroot}/opt/icalingua
-install -Dm644 pkgres/512x512.png %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps/icalingua.png
-install -Dm644 pkgres/icalingua.desktop %{buildroot}/%{_datadir}/applications/icalingua.desktop
-ln -s /opt/icalingua/icalingua %{buildroot}/%{_bindir}/icalingua
+cp -r * %{buildroot}/opt/icalingua
+install -Dm644 %{S:1} %{buildroot}/%{_datadir}/icons/hicolors/512x512/apps/icalingua.png
+install -Dm644 %{S:2} %{buildroot}/%{_datadir}/applications/icalingua.desktop
+
+
+%post
+ln -s /opt/icalingua/icalingua %{_bindir}/icalingua
+
+
+%postun
+rm %{_bindir}/icalingua
+
 
 %files
 %license LICENSE
@@ -48,7 +61,7 @@ ln -s /opt/icalingua/icalingua %{buildroot}/%{_bindir}/icalingua
 /opt/icalingua/*
 %{_datadir}/icons/hicolors/512x512/apps/icalingua.png
 %{_datadir}/applications/icalingua.desktop
-{_bindir}/icalingua
+
 
 %changelog
 
