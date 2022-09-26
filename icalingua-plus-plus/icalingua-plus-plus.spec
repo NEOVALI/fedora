@@ -8,12 +8,13 @@ License:        AGPL v3
 URL:            https://github.com/Icalingua-plus-plus/Icalingua-plus-plus
 Source0:        %{url}/releases/download/v%{version}/icalingua-%{version}.tar.xz
 Source1:        %{url}/raw/development/pkgres/512x512.png
-Source2:        %{url}/raw/development/pkgres/icalingua.desktop
+Source2:        https://github.com/valig5/fedora/raw/main/icalingua-plus-plus/icalingua.desktop
 Source3:        %{url}/raw/development/LICENSE
 
 
 BuildRequires:  bash
 BuildRequires:  tar
+BuildRequires:  gtk3
 
 
 Requires:       gtk3
@@ -52,7 +53,7 @@ ln -s /opt/icalingua/icalingua %{_bindir}/icalingua
 
 
 %postun
-rm %{_bindir}/icalingua
+rm -f %{_bindir}/icalingua
 
 
 %files
