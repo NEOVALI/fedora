@@ -1,5 +1,5 @@
 Name:           adw-gtk3-theme
-Version:        3.7
+Version:        4.0
 Release:        1%{?dist}
 Summary:        The theme from libadwaita ported to GTK-3
 License:        GPLv2+
@@ -24,13 +24,13 @@ The theme from libadwaita ported to GTK-3
 
 
 %build
-cd adw-gtk3-3.7
+cd adw-gtk3-%{version}
 %meson
 %meson_build
 
 
 %install
-cd adw-gtk3-3.7
+cd adw-gtk3-%{version}
 %meson_install
 
 %post
@@ -46,5 +46,3 @@ cd adw-gtk3-3.7
 %{_datadir}/themes/adw-gtk3-dark/*
 
 %changelog
-* Sun Sep 25 2022 five <156211398@qq.com> - 3.7-1
-- update to 3.7
