@@ -34,7 +34,7 @@ A Clash GUI based on tauri.
 
 
 %define debug_package %{nil}
-
+%define_build_id_links none
 
 %prep
 %setup -n %{name}-%{version}
