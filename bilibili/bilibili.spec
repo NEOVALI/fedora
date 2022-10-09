@@ -5,7 +5,7 @@ Version:        1.6.1
 Release:        1%{?dist}
 Summary:        哔哩哔哩官方客户端linux移植版。Bilibili official desktop client
 
-License:        
+License:        nolicense
 URL:            https://github.com/msojocs/bilibili-linux
 Source0:        %{url}/releases/download/v%{version}-3/io.github.msojocs.bilibili_%{version}-3_amd64.deb
 
