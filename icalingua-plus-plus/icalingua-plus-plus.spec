@@ -26,7 +26,7 @@ Requires:       libappindicator-gtk3
 
 
 %define debug_package %{nil}
-
+%undefine _missing_build_ids_terminate_build
 
 %prep
 %autosetup -n icalingua-%{version}
