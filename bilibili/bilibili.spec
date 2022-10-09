@@ -1,10 +1,11 @@
+%define debug_package %{nil}
+
 Name:           bilibili
 Version:        1.6.1
 Release:        1%{?dist}
 Summary:        哔哩哔哩官方客户端linux移植版。Bilibili official desktop client
 
-
-License:        MIT
+License:        
 URL:            https://github.com/msojocs/bilibili-linux
 Source0:        %{url}/releases/download/v%{version}-3/io.github.msojocs.bilibili_%{version}-3_amd64.deb
 
@@ -14,12 +15,8 @@ Requires:       gtk3
 Requires:       libappindicator-gtk3
 Requires:       ffmpeg
 
-
 %description
-%{summary}
-
-
-%define debug_package %{nil}
+哔哩哔哩官方客户端linux移植版。Bilibili official desktop client
 
 %prep
 ar -vx %{S:0}
@@ -39,11 +36,6 @@ cp -r ./opt/apps/io.github.msojocs.bilibili %{buildroot}/opt/apps/
 install -Dm644 ./usr/share/applications/io.github.msojocs.bilibili.desktop %{buildroot}/%{_datadir}/applications/io.github.msojocs.bilibili.desktop 
 install -Dm644 ./usr/share/icons/hicolor/scalable/apps/io.github.msojocs.bilibili.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/io.github.msojocs.bilibili.svg
 
-%post
-
-
-%postun
-
 
 %files
 %dir /opt/apps/io.github.msojocs.bilibili
@@ -51,5 +43,7 @@ install -Dm644 ./usr/share/icons/hicolor/scalable/apps/io.github.msojocs.bilibil
 %{_datadir}/applications/io.github.msojocs.bilibili.desktop
 %{_datadir}/icons/hicolor/scalable/apps/io.github.msojocs.bilibili.svg
 
-%changelog
 
+%changelog
+* Sun Oct 09 2022 five <valigarmanda55@gmail.com>
+- bilibili
