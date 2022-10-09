@@ -27,7 +27,7 @@ tar -xvf data.tar.xz
 
 
 %build
-# nothing to build
+
 
 
 %install
