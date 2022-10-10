@@ -3,7 +3,7 @@
 
 Name:           bilibili
 Version:        1.6.1
-Release:        1%{?dist}
+Release:        2%{?dist} # 1 -> 2
 Summary:        哔哩哔哩官方客户端linux移植版。Bilibili official desktop client
 
 License:        nolicense

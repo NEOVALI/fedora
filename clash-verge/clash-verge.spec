@@ -1,6 +1,9 @@
+%define debug_package %{nil}
+%define _build_id_links none
+
 Name:           clash-verge
 Version:        1.1.0
-Release:        1%{?dist}
+Release:        2%{?dist} # 1 -> 2
 Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
@@ -33,8 +36,6 @@ BuildArch:      x86_64
 A Clash GUI based on tauri.
 
 
-%define debug_package %{nil}
-%define_build_id_links none
 
 %prep
 %setup -n %{name}-%{version}

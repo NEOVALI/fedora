@@ -1,6 +1,10 @@
+%define debug_package %{nil}
+%define _build_id_links none
+
+
 Name:           yesplaymusic
 Version:        0.4.5
-Release:        1%{?dist}
+Release:        2%{?dist} # 1 -> 2
 Summary:        A client for QQ and more.
 
 
@@ -23,9 +27,6 @@ Requires:       libappindicator-gtk3
 
 %description
 %{summary}
-
-
-%define debug_package %{nil}
 
 
 %prep
