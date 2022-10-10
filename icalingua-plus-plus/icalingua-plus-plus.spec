@@ -3,7 +3,7 @@
 
 Name:           icalingua-plus-plus
 Version:        2.7.3
-Release:        2%{?dist} # 1 -> 2
+Release:        1%{?dist}
 Summary:        A client for QQ and more.
 
 

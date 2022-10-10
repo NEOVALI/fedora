@@ -4,7 +4,7 @@
 
 Name:           yesplaymusic
 Version:        0.4.5
-Release:        2%{?dist} # 1 -> 2
+Release:        1%{?dist}
 Summary:        A client for QQ and more.
 
 
