@@ -1,7 +1,6 @@
 %define debug_package %{nil}
 %define _build_id_links none
 
-
 Name:           yesplaymusic
 Version:        0.4.5
 Release:        1%{?dist}

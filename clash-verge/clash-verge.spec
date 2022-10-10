@@ -1,5 +1,4 @@
 %define debug_package %{nil}
-%define _build_id_links none
 
 Name:           clash-verge
 Version:        1.1.0
