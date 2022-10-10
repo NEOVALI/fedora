@@ -1,3 +1,6 @@
+%define debug_package %{nil}
+%define _build_id_links none
+
 Name:           icalingua-plus-plus
 Version:        2.7.3
 Release:        1%{?dist}
@@ -24,9 +27,6 @@ Requires:       libappindicator-gtk3
 %description
 %{summary}
 
-
-%define debug_package %{nil}
-%define_build_id_links none
 
 %prep
 %autosetup -n icalingua-%{version}

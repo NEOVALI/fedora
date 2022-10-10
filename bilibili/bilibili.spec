@@ -1,3 +1,6 @@
+%define debug_package %{nil}
+%define _build_id_links none
+
 Name:           bilibili
 Version:        1.6.1
 Release:        1%{?dist}
@@ -19,9 +22,6 @@ Requires:       ffmpeg
 %prep
 ar -vx %{S:0}
 tar -xvf data.tar.xz
-
-%define debug_package %{nil}
-%undefine _missing_build_ids_terminate_build
 
 %build
 
