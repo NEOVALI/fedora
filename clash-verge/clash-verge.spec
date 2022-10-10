@@ -1,4 +1,4 @@
-%define debug_package %{nil}
+%global debug_package %{nil}
 
 Name:           clash-verge
 Version:        1.1.0

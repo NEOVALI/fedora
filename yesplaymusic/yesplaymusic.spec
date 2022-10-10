@@ -1,5 +1,5 @@
-%define debug_package %{nil}
-%define _build_id_links none
+%global debug_package %{nil}
+%global _build_id_links none
 
 Name:           yesplaymusic
 Version:        0.4.5

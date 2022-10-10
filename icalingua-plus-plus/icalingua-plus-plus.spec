@@ -1,5 +1,5 @@
 %global debug_package %{nil}
-%define _build_id_links none
+%global _build_id_links none
 
 Name:           icalingua-plus-plus
 Version:        2.7.3
