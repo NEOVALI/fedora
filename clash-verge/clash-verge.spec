@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           clash-verge
-Version:        1.1.0
+Version:        1.1.1
 Release:        1%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
