@@ -2,7 +2,7 @@
 
 Name:           aliyun-drive-xiaobaiyang
 Version:        2.9.24
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        基于阿里云盘网页版开发的PC客户端，支持win7-11，macOS，linux
 License:        MIT
 Url:            https://github.com/liupan1890/aliyunpan
@@ -41,6 +41,8 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
+rm -R /opt/aliyun-drive-xiaobaiyang/electron/resources/aria2c
+rm -R /opt/aliyun-drive-xiaobaiyang/electron/resources/app.asar
 ln -s /usr/bin/aria2c /opt/aliyun-drive-xiaobaiyang/electron/resources/
 cp -r %{S:2} %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
 
