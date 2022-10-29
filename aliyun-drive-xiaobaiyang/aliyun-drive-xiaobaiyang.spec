@@ -2,7 +2,7 @@
 
 Name:           aliyun-drive-xiaobaiyang
 Version:        2.9.24
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        基于阿里云盘网页版开发的PC客户端，支持win7-11，macOS，linux
 License:        MIT
 Url:            https://github.com/liupan1890/aliyunpan
@@ -24,7 +24,7 @@ BuildArch:      x86_64
 %prep
 %setup -qcn %{name}-%{version}
 cp %{S:2} ./
-mv * %{name}
+mv \#U963* %{name}
 cd %{name}
 mv linux#U4f7f#U7528#U5e2e#U52a9.txt README.txt
 mv \#U963f#U91cc#U4e91#U76d8#U5c0f#U767d#U7f8a#U7248 阿里云盘小白羊版
@@ -35,7 +35,8 @@ mv \#U963f#U91cc#U4e91#U76d8#U5c0f#U767d#U7f8a#U7248 阿里云盘小白羊版
 %install
 install -d %{buildroot}/opt
 cp -r aliyun-drive-xiaobaiyang %{buildroot}/opt
-
+rm -R %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/app.asar
+mv app.asar %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
 # .deskop
 install -d %{buildroot}/%{_datadir}/applications
 install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
@@ -43,9 +44,7 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 %post
 rm -R /opt/aliyun-drive-xiaobaiyang/electron/resources/aria2c
-rm -R /opt/aliyun-drive-xiaobaiyang/electron/resources/app.asar
 ln -s /usr/bin/aria2c /opt/aliyun-drive-xiaobaiyang/electron/resources/
-mv app.asar %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
 
 %postun
 
