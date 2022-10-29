@@ -23,6 +23,7 @@ BuildArch:      x86_64
 
 %prep
 %setup -qcn %{name}-%{version}
+cp %{S:2} ./
 mv * %{name}
 cd %{name}
 mv linux#U4f7f#U7528#U5e2e#U52a9.txt README.txt
@@ -44,7 +45,7 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 rm -R /opt/aliyun-drive-xiaobaiyang/electron/resources/aria2c
 rm -R /opt/aliyun-drive-xiaobaiyang/electron/resources/app.asar
 ln -s /usr/bin/aria2c /opt/aliyun-drive-xiaobaiyang/electron/resources/
-cp -r %{S:2} %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
+mv app.asar %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
 
 %postun
 
