@@ -40,6 +40,8 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
+setcap 'cap_net_admin=+eip cap_net_bind_service=+eip' /opt/aliyun-drive-xiaobaiyang/electron/resources/aria2c
+
 
 %postun
 
