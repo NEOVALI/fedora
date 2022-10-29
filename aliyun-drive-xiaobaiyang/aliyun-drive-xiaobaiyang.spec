@@ -34,7 +34,7 @@ mv \#U963f#U91cc#U4e91#U76d8#U5c0f#U767d#U7f8a#U7248 阿里云盘小白羊版
 %install
 install -d %{buildroot}/opt
 cp -r aliyun-drive-xiaobaiyang %{buildroot}/opt
-cp -r {S:2} %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
+cp -r %{S:2} %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
 
 # .deskop
 install -d %{buildroot}/%{_datadir}/applications
