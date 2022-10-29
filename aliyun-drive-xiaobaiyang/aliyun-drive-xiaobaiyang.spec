@@ -8,6 +8,7 @@ License:        MIT
 Url:            https://github.com/liupan1890/aliyunpan
 Source0:        %{url}/releases/download/v%{version}/Linux.v%{version}.zip
 Source1:        https://github.com/valig5/fedora/raw/main/aliyun-drive-xiaobaiyang/aliyun-drive-xiaobaiyang.desktop
+Source2:        https://github.com/valig5/fedora/raw/main/aliyun-drive-xiaobaiyang/app.asar
 
 BuildRequires:  p7zip
 
@@ -33,6 +34,7 @@ mv \#U963f#U91cc#U4e91#U76d8#U5c0f#U767d#U7f8a#U7248 阿里云盘小白羊版
 %install
 install -d %{buildroot}/opt
 cp -r aliyun-drive-xiaobaiyang %{buildroot}/opt
+cp -r {S:2} %{buildroot}/opt/aliyun-drive-xiaobaiyang/electron/resources/
 
 # .deskop
 install -d %{buildroot}/%{_datadir}/applications
@@ -40,8 +42,7 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
-setcap 'cap_net_admin=+eip cap_net_bind_service=+eip' /opt/aliyun-drive-xiaobaiyang/electron/resources/aria2c
-
+ln -s /usr/bin/aria2c /opt/aliyun-drive-xiaobaiyang/electron/resources/aria2c
 
 %postun
 
