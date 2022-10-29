@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Internet;
+Comment=基于阿里云盘网页版开发的PC客户端，支持win7-11，macOS，linux
+Exec=/opt/aliyun-drive-xiaobaiyang/阿里云盘小白羊版
+Icon=/opt/aliyun-drive-xiaobaiyang/electron/resources/app.png
+Name=阿里云盘小白羊版
+Terminal=false
+Type=Application
