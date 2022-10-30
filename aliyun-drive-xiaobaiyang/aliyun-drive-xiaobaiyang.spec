@@ -2,7 +2,7 @@
 
 Name:           aliyun-drive-xiaobaiyang
 Version:        2.9.24
-Release:        1%{?dist}
+Release:        5%{?dist}
 Summary:        基于阿里云盘网页版开发的PC客户端，支持win7-11，macOS，linux
 License:        MIT
 Url:            https://github.com/liupan1890/aliyunpan
