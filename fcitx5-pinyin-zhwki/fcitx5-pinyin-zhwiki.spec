@@ -1,4 +1,4 @@
-%define         _webslangver        20220909
+%define         _webslangver        20221029
 %define         _converterver       0.2.4
 
 Name:           fcitx5-pinyin-zhwiki
