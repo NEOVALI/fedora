@@ -7,7 +7,7 @@ URL:            https://github.com/Dreamacro/clash/releases/tag/premium
 Source0:        https://github.com/MetaCubeX/Clash.Meta/releases/download/v%{version}/Clash.Meta-linux-amd64-v%{version}.gz
 Source1:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/clash-meta.service
 Source2:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/clash-meta@.service
-Source2:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/config.yaml
+Source3:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/config.yaml
 BuildArch:      x86_64
 
 BuildRequires:  bash
