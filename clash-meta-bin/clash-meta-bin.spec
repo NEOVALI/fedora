@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           clash-meta-bin
 Version:        1.13.2
 Release:        1%{?dist}

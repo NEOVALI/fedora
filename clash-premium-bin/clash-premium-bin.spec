@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           clash-premium-bin
 Version:        2022.11.25
 Release:        1%{?dist}
