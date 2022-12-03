@@ -1,4 +1,4 @@
-%define         _webslangver        20221029
+%define         _webslangver        20221128
 %define         _converterver       0.2.4
 
 Name:           fcitx5-pinyin-zhwiki
@@ -11,7 +11,8 @@ Source0:        https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/dow
 Source1:        https://raw.githubusercontent.com/felixonmars/fcitx5-pinyin-zhwiki/master/LICENSE
 BuildArch:      noarch
 
-Recommends:     fcitx5-chinese-addons
+Requires:       fcitx5
+Requires:       fcitx5-chinese-addons
 
 %description
 %{summary} .

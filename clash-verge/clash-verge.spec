@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           clash-verge
-Version:        1.1.2
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
@@ -25,9 +25,13 @@ BuildRequires:  rust-openssl+default-devel
 BuildRequires:  webkit2gtk3
 BuildRequires:  libappindicator-gtk3 
 BuildRequires:  yarnpkg
+BuildRequires:  clash-meta-bin
+BuildRequires:  clash-premium-bin
 
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
+Requires:       clash-meta-bin
+Requires:       clash-premium-bin
 
 BuildArch:      x86_64
 
@@ -38,10 +42,21 @@ A Clash GUI based on tauri.
 
 %prep
 %setup -n %{name}-%{version}
+install -d ./src-tauri/sidecar
+ln -sf /usr/bin/clash ./src-tauri/sidecar/clash-x86_64-unknown-linux-gnu
+ln -sf /usr/bin/clash-meta ./src-tauri/sidecar/clash-meta-x86_64-unknown-linux-gnu
 
+
+cd src-tauri
+# only build the excutable
+jq '.tauri.bundle.active = false' tauri.conf.json|sponge tauri.conf.json
+# disable updater
+jq '.tauri.updater.active = false' tauri.conf.json|sponge tauri.conf.json
+cd ..
 
 %build
 # build
+export RUSTFLAGS="-L /usr/lib/quickjs"
 yarn install
 yarn run check
 yarn build
@@ -52,8 +67,7 @@ yarn build
 # bin
 install -d %{buildroot}/%{_bindir}
 install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir} # clash-verge
-install -Dm755 ./src-tauri/target/release/clash -t %{buildroot}/%{_bindir} # clash
-install -Dm755 ./src-tauri/target/release/clash-meta -t %{buildroot}/%{_bindir} # clash-meta
+
 
 # /usr/lib64/resources
 install -d %{buildroot}/%{_libdir}/%{name}/resources 
@@ -69,17 +83,12 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
-setcap 'cap_net_admin=+eip cap_net_bind_service=+eip' %{_bindir}/clash
-setcap 'cap_net_admin=+eip cap_net_bind_service=+eip' %{_bindir}/clash-meta
-
 %postun
 
 
 %files
 %license LICENSE
 %{_bindir}/%{name}
-%{_bindir}/clash
-%{_bindir}/clash-meta
 %dir %{_libdir}/%{name}/resources
 %{_libdir}/%{name}/resources/Country.mmdb
 %{_datadir}/applications/%{name}.desktop
@@ -87,7 +96,3 @@ setcap 'cap_net_admin=+eip cap_net_bind_service=+eip' %{_bindir}/clash-meta
 
 
 %changelog
-* Mon Sep 26 2022 five <156211398@qq.com> - 1.1.0
-- upstream update 1.1.0
-* Sun Sep 25 2022 five <156211398@qq.com> - 1.0.6
-- initial upload
