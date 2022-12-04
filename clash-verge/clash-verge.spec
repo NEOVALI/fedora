@@ -28,6 +28,7 @@ BuildRequires:  yarnpkg
 BuildRequires:  clash-meta-bin
 BuildRequires:  clash-premium-bin
 
+
 Requires:       webkit2gtk3
 Requires:       libappindicator-gtk3 
 Requires:       clash-meta-bin
