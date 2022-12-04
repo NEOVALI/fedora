@@ -13,14 +13,14 @@ Source3:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/config.
 BuildArch:      x86_64
 
 BuildRequires:  bash
-BuildRequires:  tar
+BuildRequires:  gzip
 
 %description
 Another Clash Kernel by MetaCubeX
 
 
 %prep
-%setup -c
+gzip -d %{S:0}
 
 
 %build

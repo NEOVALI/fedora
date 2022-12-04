@@ -12,14 +12,14 @@ Source2:        https://github.com/valig5/fedora/raw/main/clash-premium-bin/clas
 BuildArch:      x86_64
 
 BuildRequires:  bash
-BuildRequires:  tar
+BuildRequires:  gzip
 
 %description
 Close-sourced pre-built Clash binary with TUN support
 
 
 %prep
-%setup -c
+%setup -n %{name}-%{version}
 
 
 %build
