@@ -19,7 +19,10 @@ Close-sourced pre-built Clash binary with TUN support
 
 
 %prep
-%setup -n %{name}-%{version}
+mkdir -p %{_builddir}/%{name}-%{version}
+cd %{_builddir}/%{name}-%{version}
+cp %{S:0} ./
+gzip -d ./*
 
 
 %build
@@ -27,7 +30,8 @@ Close-sourced pre-built Clash binary with TUN support
 
 
 %install
-install -Dm755 clash-linux-amd64 %{buildroot}/%{_bindir}/clash
+cd %{_builddir}/%{name}-%{version}
+install -Dm755 clash-linux-amd64-%{version} %{buildroot}/%{_bindir}/clash
 install -Dm644 %{S:1} %{buildroot}/%{_libdir}/systemd/system/clash@.service
 install -Dm644 %{S:2} %{buildroot}/%{_libdir}/systemd/user/clash.service
 
