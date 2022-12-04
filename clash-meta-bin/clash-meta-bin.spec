@@ -32,7 +32,7 @@ gzip -d ./*
 
 %install
 cd %{_builddir}/%{name}-%{version}
-install -Dm755 Clash.Meta-linux-amd64 %{buildroot}/%{_bindir}/clash-meta
+install -Dm755 Clash.Meta-linux-amd64-v%{version} %{buildroot}/%{_bindir}/clash-meta
 install -Dm644 %{S:1} %{buildroot}/%{_libdir}/systemd/system/clash-meta@.service
 install -Dm644 %{S:2} %{buildroot}/%{_libdir}/systemd/user/clash-meta.service
 install -Dm644 %{S:3} %{buildroot}/etc/clash-meta/config.yaml
