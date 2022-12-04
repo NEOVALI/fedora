@@ -91,7 +91,7 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 %files
 %license LICENSE
 %{_bindir}/%{name}
-%dir %{_libdir}%{name}/resources
+%dir %{_libdir}/%{name}/resources
 %{_libdir}/%{name}/resources/Country.mmdb
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
