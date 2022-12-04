@@ -11,6 +11,7 @@ Source1:        https://github.com/valig5/fedora/raw/main/clash-verge/clash-verg
 
 BuildRequires:  nodejs
 BuildRequires:  npm
+BuildRequires:  jq
 BuildRequires:  cargo
 BuildRequires:  rust
 BuildRequires:  wget
