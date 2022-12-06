@@ -6,7 +6,7 @@ License:        MIT
 Url:            https://github.com/qier222/YesPlayMusic
 Source0:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 Source1:        %{url}/raw/master/image/logo.png
-Source2:        https://github.com/valig5/fedora/raw/main/yesplaymusic/yesplaymusic.desktop
+Source2:        https://github.com/valig5/fedora/raw/main/%{name}/%{name}.desktop
 BuildRequires:  tar
 BuildArch:      x86_64
 
