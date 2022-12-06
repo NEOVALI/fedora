@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;Music;
+Exec=yesplaymusic %u
+Icon=yesplaymusic
+Name=YesPlayMusic
+Comment=High appearance third-party Netease Cloud Music.
+Comment[zh_CN]=高颜值的第三方网易云播放器
+StartupNotify=true
+Terminal=false
+Type=Application
