@@ -7,7 +7,10 @@ Url:            https://github.com/Icalingua-plus-plus/Icalingua-plus-plus
 Source0:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.xz
 Source1:        %{url}/raw/develop/art-src/xmas.png
 Source2:        https://github.com/valig5/fedora/raw/main/%{name}/%{name}.desktop
+
 BuildRequires:  tar
+Requires:       libappindicator-gtk3
+
 BuildArch:      x86_64
 
 %undefine _missing_build_ids_terminate_build
