@@ -1,6 +1,6 @@
 Name:           yesplaymusic
 Version:        0.4.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        High appearance third-party Netease Cloud Music
 License:        MIT
 Url:            https://github.com/qier222/YesPlayMusic
