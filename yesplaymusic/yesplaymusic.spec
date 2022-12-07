@@ -5,7 +5,7 @@ Summary:        High appearance third-party Netease Cloud Music
 License:        MIT
 Url:            https://github.com/qier222/YesPlayMusic
 Source0:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
-Source1:        https://github.com/valig5/fedora/raw/main/%{name}//512x512.png
+Source1:        https://github.com/valig5/fedora/raw/main/%{name}/512x512.png
 Source2:        https://github.com/valig5/fedora/raw/main/%{name}/%{name}.desktop
 
 BuildRequires:  tar
