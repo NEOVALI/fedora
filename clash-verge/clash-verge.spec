@@ -74,6 +74,8 @@ install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir} # c
 # /usr/lib/resources
 install -d %{buildroot}/usr/lib/%{name}/resources 
 install -Dm644 ./src-tauri/resources/Country.mmdb -t %{buildroot}/usr/lib/%{name}/resources
+install -Dm644 ./src-tauri/resources/geoip.dat -t %{buildroot}/usr/lib/%{name}/resources
+install -Dm644 ./src-tauri/resources/geosite.dat -t %{buildroot}/usr/lib/%{name}/resources
 
 # icons
 install -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps 
@@ -91,8 +93,11 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 %files
 %license LICENSE
 %{_bindir}/%{name}
+%dir /usr/lib/%{name}
 %dir /usr/lib/%{name}/resources
 /usr/lib/%{name}/resources/Country.mmdb
+/usr/lib/%{name}/resources/geoip.dat
+/usr/lib/%{name}/resources/geosite.dat
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
