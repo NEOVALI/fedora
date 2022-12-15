@@ -1,5 +1,5 @@
 Name:           sarasa-gothic-fonts
-Version:        0.37.4
+Version:        0.38.0
 Release:        1%{?dist}
 Summary:        SARASA GOTHIC, a CJK programing font based on Iosevka, Inter and Source Han Sans
 License:        OFL-1.1
@@ -37,5 +37,3 @@ install -m 644 *.ttc %{buildroot}/%{_ttfontsdir}
 %dir %{_ttfontsdir}
 
 %changelog
-* Sun Sep 25 2022 five <156211398@qq.com> - 0.37.4-2
-- update to 0.37.4
