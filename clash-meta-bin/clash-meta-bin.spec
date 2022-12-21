@@ -2,7 +2,7 @@
 
 Name:           clash-meta-bin
 Version:        1.13.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Another Clash Kernel.
 License:        GPLv3
 URL:            https://github.com/MetaCubeX/Clash.Meta
@@ -33,14 +33,33 @@ gzip -d ./*
 %install
 cd %{_builddir}/%{name}-%{version}
 install -Dm755 Clash.Meta-linux-amd64-v%{version} %{buildroot}/%{_bindir}/clash-meta
-install -Dm644 %{S:1} %{buildroot}/%{_libdir}/systemd/system/clash-meta@.service
-install -Dm644 %{S:2} %{buildroot}/%{_libdir}/systemd/user/clash-meta.service
+install -Dm644 %{S:1} %{buildroot}/%{_unitdir}/clash-meta@.service
+install -Dm644 %{S:2} %{buildroot}/%{_userunitdir}/clash-meta.service
 install -Dm644 %{S:3} %{buildroot}/etc/clash-meta/config.yaml
+
+
+%post
+%systemd_user_post clash-meta.service
+%systemd_post clash-meta@.service
+
+%preun
+%systemd_user_preun clash-meta.service
+# disable --now seems don't work here.
+if [ $1 -eq 0 ] && [ -x /usr/bin/systemctl ] ; then
+        # Package removal, not upgrade
+        /usr/bin/systemctl --no-reload stop clash-meta@*.service || :
+        /usr/bin/systemctl --no-reload disable clash-meta@.service || :
+fi
+
+%postun
+%systemd_user_postun_with_restart clash-meta.service
+%systemd_postun_with_restart clash-meta@*.service
+
 
 %files
 %{_bindir}/clash-meta
-%{_libdir}/systemd/system/clash-meta@.service
-%{_libdir}/systemd/user/clash-meta.service
+%{_unitdir}/clash-meta@.service
+%{_userunitdir}/clash-meta.service
 /etc/clash-meta/config.yaml
 
 %changelog
