@@ -58,8 +58,8 @@ fi
 
 %files
 %{_bindir}/clash-meta
-%{_unitdir}/clash-meta@.service
-%{_userunitdir}/clash-meta.service
+/%{_unitdir}/clash-meta@.service
+/%{_userunitdir}/clash-meta.service
 /etc/clash-meta/config.yaml
 
 %changelog

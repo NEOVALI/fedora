@@ -56,7 +56,7 @@ fi
 
 %files
 %{_bindir}/clash
-%{_unitdir}/clash@.service
-%{_userunitdir}/clash.service
+/%{_unitdir}/clash@.service
+/%{_userunitdir}/clash.service
 
 %changelog
