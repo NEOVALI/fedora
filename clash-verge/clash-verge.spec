@@ -2,12 +2,12 @@
 
 Name:           clash-verge
 Version:        1.2.0
-Release:        3%{?dist}
+Release:        2%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
-Source1:        https://github.com/valig5/fedora/raw/main/clash-verge/clash-verge.desktop
+Source1:        https://github.com/NEOVALI/fedora/raw/main/clash-verge/clash-verge.desktop
 
 BuildRequires:  nodejs
 BuildRequires:  npm

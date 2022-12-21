@@ -7,9 +7,9 @@ Summary:        Another Clash Kernel.
 License:        GPLv3
 URL:            https://github.com/MetaCubeX/Clash.Meta
 Source0:        %{url}/releases/download/v%{version}/Clash.Meta-linux-amd64-v%{version}.gz
-Source1:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/clash-meta@.service
-Source2:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/clash-meta.service
-Source3:        https://github.com/valig5/fedora/raw/main/clash-meta-bin/config.yaml
+Source1:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/clash-meta@.service
+Source2:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/clash-meta.service
+Source3:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/config.yaml
 BuildArch:      x86_64
 
 BuildRequires:  bash
