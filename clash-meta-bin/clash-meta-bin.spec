@@ -2,7 +2,7 @@
 
 Name:           clash-meta-bin
 Version:        1.13.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Another Clash Kernel.
 License:        GPLv3
 URL:            https://github.com/MetaCubeX/Clash.Meta
@@ -36,24 +36,6 @@ install -Dm755 Clash.Meta-linux-amd64-v%{version} %{buildroot}/%{_bindir}/clash-
 install -Dm644 %{S:1} %{buildroot}/usr/lib/systemd/system/clash-meta@.service
 install -Dm644 %{S:2} %{buildroot}/usr/lib/systemd/user/clash-meta.service
 install -Dm644 %{S:3} %{buildroot}/etc/clash-meta/config.yaml
-
-
-%post
-%systemd_user_post clash-meta.service
-%systemd_post clash-meta@.service
-
-%preun
-%systemd_user_preun clash-meta.service
-# disable --now seems don't work here.
-if [ $1 -eq 0 ] && [ -x /usr/bin/systemctl ] ; then
-        # Package removal, not upgrade
-        /usr/bin/systemctl --no-reload stop clash-meta@*.service || :
-        /usr/bin/systemctl --no-reload disable clash-meta@.service || :
-fi
-
-%postun
-%systemd_user_postun_with_restart clash-meta.service
-%systemd_postun_with_restart clash-meta@*.service
 
 
 %files

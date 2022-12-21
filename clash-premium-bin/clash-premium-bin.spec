@@ -2,7 +2,7 @@
 
 Name:           clash-premium-bin
 Version:        2022.11.25
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Close-sourced pre-built Clash binary with TUN support
 License:        GPLv3
 URL:            https://github.com/Dreamacro/clash/releases/tag/premium
@@ -35,23 +35,6 @@ install -Dm755 clash-linux-amd64-%{version} %{buildroot}/%{_bindir}/clash
 install -Dm644 %{S:1} %{buildroot}/usr/lib/systemd/system/clash@.service
 install -Dm644 %{S:2} %{buildroot}/usr/lib/systemd/user/clash.service
 
-
-%post
-%systemd_user_post clash.service
-%systemd_post clash@.service
-
-%preun
-%systemd_user_preun clash.service
-# disable --now seems don't work here.
-if [ $1 -eq 0 ] && [ -x /usr/bin/systemctl ] ; then
-        # Package removal, not upgrade
-        /usr/bin/systemctl --no-reload stop clash@*.service || :
-        /usr/bin/systemctl --no-reload disable clash@.service || :
-fi
-
-%postun
-%systemd_user_postun_with_restart clash.service
-%systemd_postun_with_restart clash@*.service
 
 
 %files
