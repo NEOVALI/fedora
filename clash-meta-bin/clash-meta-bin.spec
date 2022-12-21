@@ -2,7 +2,7 @@
 
 Name:           clash-meta-bin
 Version:        1.13.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Another Clash Kernel.
 License:        GPLv3
 URL:            https://github.com/MetaCubeX/Clash.Meta

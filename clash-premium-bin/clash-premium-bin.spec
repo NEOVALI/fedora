@@ -2,7 +2,7 @@
 
 Name:           clash-premium-bin
 Version:        2022.11.25
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Close-sourced pre-built Clash binary with TUN support
 License:        GPLv3
 URL:            https://github.com/Dreamacro/clash/releases/tag/premium
