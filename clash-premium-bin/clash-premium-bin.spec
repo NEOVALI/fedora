@@ -56,7 +56,7 @@ fi
 
 %files
 %{_bindir}/clash
-/%{_unitdir}/clash@.service
-/%{_userunitdir}/clash.service
+/usr/lib/systemd/system/clash@.service
+/usr/lib/systemd/user/clash.service
 
 %changelog
