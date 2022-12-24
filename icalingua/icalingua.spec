@@ -1,5 +1,5 @@
 Name:           icalingua
-Version:        2.8.1
+Version:        2.8.2
 Release:        1%{?dist}
 Summary:        A client for QQ and more.
 License:        GPL v3
