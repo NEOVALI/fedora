@@ -36,11 +36,11 @@ gzip -d ./*
 %install
 cd %{_builddir}/%{name}-%{version}
 install -Dm755 Clash.Meta-linux-amd64-v%{version} %{buildroot}/%{_bindir}/clash-meta
-install -Dm644 -t %{S:1} %{buildroot}/%{_unitdir}/
-install -Dm644 -t %{S:2} %{buildroot}/%{_unitdir}/
+install -Dm644 %{S:1} %{buildroot}/%{_unitdir}/clash-meta@.service
+install -Dm644 %{S:2} %{buildroot}/%{_unitdir}/clash-meta.service
 install -Dm644 %{S:3} %{buildroot}/usr/lib/sysusers.d/clash-meta.conf
 install -Dm644 %{S:4} %{buildroot}/usr/lib/tmpfiles.d/clash-meta.conf
-install -Dm644 -t %{S:5} %{buildroot}/%{_sysconfdir}/clash-meta/
+install -Dm644 %{S:5} %{buildroot}/%{_sysconfdir}/clash-meta/config.yaml
 
 %post
 ln -sf %{_sysconfdir}/clash/Country.mmdb %{_sysconfdir}/clash-meta/Country.mmdb
