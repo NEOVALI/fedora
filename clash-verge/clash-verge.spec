@@ -2,7 +2,7 @@
 
 Name:           clash-verge
 Version:        1.2.1
-Release:        5%{?dist}
+Release:        1%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
@@ -83,7 +83,7 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 %post
 ln -sf %{_sysconfdir}/clash/Country.mmdb /usr/lib/%{name}/resources/Country.mmdb
 %postun
-
+rm -rf /usr/lib/%{name}/resources/Country.mmdb
 
 %files
 %license LICENSE
