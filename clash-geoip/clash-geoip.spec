@@ -2,6 +2,7 @@ Name:           clash-geoip
 Version:        20221212
 Release:        1%{?dist}
 Summary:        A GeoLite2 data created by MaxMind
+License:        Public Domain
 Url:            https://github.com/Dreamacro/maxmind-geoip
 Source0:        %{url}/releases/download/20221212/Country.mmdb
 BuildArch:      noarch
