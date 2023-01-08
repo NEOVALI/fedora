@@ -35,7 +35,8 @@ install -Dm755 clash-linux-amd64-%{version} %{buildroot}/%{_bindir}/clash
 install -Dm644 %{S:1} %{buildroot}/%{_unitdir}/
 install -Dm644 %{S:2} %{buildroot}/%{_userunitdir}/
 
-
+%post
+setcap "cap_net_admin=ep" %{_bindir}/clash
 
 %files
 %{_bindir}/clash
