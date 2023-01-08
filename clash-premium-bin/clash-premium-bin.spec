@@ -10,7 +10,7 @@ Source0:        https://github.com/Dreamacro/clash/releases/download/premium/cla
 Source1:        https://github.com/NEOVALI/fedora/raw/main/clash-premium-bin/clash@.service
 Source2:        https://github.com/NEOVALI/fedora/raw/main/clash-premium-bin/clash.service
 BuildArch:      x86_64
-
+Conflicts:      clash
 BuildRequires:  bash
 BuildRequires:  gzip
 
