@@ -2,7 +2,7 @@
 
 Name:           clash-verge
 Version:        1.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
@@ -15,7 +15,7 @@ BuildRequires:  jq
 BuildRequires:  cargo
 BuildRequires:  rust
 BuildRequires:  wget
-BuildRequires:  webkit2gtk3-devel
+BuildRequires:  webkit2gtk4.0-devel
 BuildRequires:  rust-gobject-sys+default-devel
 BuildRequires:  rust-pango+default-devel
 BuildRequires:  rust-cairo-rs+default-devel 
@@ -23,14 +23,14 @@ BuildRequires:  rust-atk-sys+default-devel
 BuildRequires:  rust-gdk-sys+default-devel
 BuildRequires:  moreutils
 BuildRequires:  rust-openssl+default-devel
-BuildRequires:  webkit2gtk3
+BuildRequires:  webkit2gtk4.0
 BuildRequires:  libappindicator-gtk3 
 BuildRequires:  yarnpkg
 BuildRequires:  clash-meta-bin
 BuildRequires:  clash-premium-bin
 
 
-Requires:       webkit2gtk3
+Requires:       webkit2gtk4.0
 Requires:       libappindicator-gtk3 
 Requires:       clash-meta-bin
 Requires:       clash-premium-bin
