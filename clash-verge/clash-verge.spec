@@ -66,7 +66,7 @@ yarn build
 
 
 %install
-
+install -d %{buildroot}/usr/lib/%{name}/resources/
 # bin
 install -d %{buildroot}/%{_bindir}
 install -Dm755 ./src-tauri/target/release/%{name} -t %{buildroot}/%{_bindir} # clash-verge
