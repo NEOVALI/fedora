@@ -9,11 +9,14 @@ URL:            https://github.com/MetaCubeX/Clash.Meta
 Source0:        %{url}/releases/download/v%{version}/Clash.Meta-linux-amd64-v%{version}.gz
 Source1:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/clash-meta@.service
 Source2:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/clash-meta.service
-Source3:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/config.yaml
+Source3:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/clash-meta.sysusers
+Source4:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/clash-meta.tmpfiles
+Source5:        https://github.com/NEOVALI/fedora/raw/main/clash-meta-bin/config.yaml
 BuildArch:      x86_64
 
 BuildRequires:  bash
 BuildRequires:  gzip
+Requires:       clash-geoip
 
 %description
 Another Clash Kernel.
@@ -33,15 +36,23 @@ gzip -d ./*
 %install
 cd %{_builddir}/%{name}-%{version}
 install -Dm755 Clash.Meta-linux-amd64-v%{version} %{buildroot}/%{_bindir}/clash-meta
-install -Dm644 %{S:1} %{buildroot}/usr/lib/systemd/system/clash-meta@.service
-install -Dm644 %{S:2} %{buildroot}/usr/lib/systemd/user/clash-meta.service
-install -Dm644 %{S:3} %{buildroot}/etc/clash-meta/config.yaml
+install -Dm644 -t %{S:1} %{buildroot}/%{_unitdir}/
+install -Dm644 -t %{S:2} %{buildroot}/%{_unitdir}/
+install -Dm644 %{S:3} %{buildroot}/usr/lib/sysusers.d/clash-meta.conf
+install -Dm644 %{S:4} %{buildroot}/usr/lib/tmpfiles.d/clash-meta.conf
+install -Dm644 -t %{S:5} %{buildroot}/%{_sysconfdir}/clash-meta/
 
+%post
+ln -sf %{_sysconfdir}/clash/Country.mmdb %{_sysconfdir}/clash-meta/Country.mmdb
 
 %files
 %{_bindir}/clash-meta
-/usr/lib/systemd/system/clash-meta@.service
-/usr/lib/systemd/user/clash-meta.service
-/etc/clash-meta/config.yaml
+%{_unitdir}/clash-meta@.service
+%{_userunitdir}/clash-meta.service
+%dir %{_sysconfdir}/clash-meta
+%{_sysconfdir}/clash-meta/config.yaml
+%{_sysconfdir}/clash-meta/Country.mmdb
+/usr/lib/sysusers.d/clash-meta.conf
+/usr/lib/tmpfiles.d/clash-meta.conf
 
 %changelog

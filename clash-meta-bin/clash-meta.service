@@ -3,10 +3,15 @@ Description=Clash-Meta Daemon, Another Clash Kernel.
 After=network.target NetworkManager.service systemd-networkd.service iwd.service
 
 [Service]
-Type=exec
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-Restart=on-abort
+Type=simple
+User=clash-meta
+Group=clash-meta
+LimitNPROC=500
+LimitNOFILE=1000000
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+Restart=always
+RestartSec=5
 ExecStart=/usr/bin/clash-meta -d /etc/clash-meta
 
 [Install]

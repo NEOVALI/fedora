@@ -1,6 +1,6 @@
 Name:           tela-icon-theme
-Version:        2022.08.28
-Release:        1%{?dist}
+Version:        20220828
+Release:        2%{?dist}
 Summary:        A flat colorful design icon theme
 License:        GPLv3
 URL:            https://github.com/vinceliuice/Tela-icon-theme
@@ -11,10 +11,8 @@ BuildRequires:  bc
 BuildRequires:	autoconf automake gtk3-devel
 Requires:       gnome-themes-extra 
 
-
 %description
 A flat colorful design icon theme
-
 
 %prep
 %setup -c

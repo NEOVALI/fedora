@@ -32,14 +32,14 @@ gzip -d ./*
 %install
 cd %{_builddir}/%{name}-%{version}
 install -Dm755 clash-linux-amd64-%{version} %{buildroot}/%{_bindir}/clash
-install -Dm644 %{S:1} %{buildroot}/usr/lib/systemd/system/clash@.service
-install -Dm644 %{S:2} %{buildroot}/usr/lib/systemd/user/clash.service
+install -Dm644 %{S:1} %{buildroot}/%{_unitdir}/
+install -Dm644 %{S:2} %{buildroot}/%{_userunitdir}/
 
 
 
 %files
 %{_bindir}/clash
-/usr/lib/systemd/system/clash@.service
-/usr/lib/systemd/user/clash.service
+%{_unitdir}/clash@.service
+%{_userunitdir}/clash.service
 
 %changelog
