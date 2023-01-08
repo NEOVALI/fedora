@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           clash-meta-bin
-Version:        1.13.2
+Version:        1.14.0
 Release:        4%{?dist}
 Summary:        Another Clash Kernel.
 License:        GPLv3
