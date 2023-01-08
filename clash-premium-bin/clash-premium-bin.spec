@@ -32,15 +32,15 @@ gzip -d ./*
 %install
 cd %{_builddir}/%{name}-%{version}
 install -Dm755 clash-linux-amd64-%{version} %{buildroot}/%{_bindir}/clash
-install -Dm644 -t %{S:1} %{buildroot}/%{_unitdir}/clash@.service
-install -Dm644 -t %{S:2} %{buildroot}/%{_userunitdir}/clash.service
+install -Dm644 %{S:1} %{buildroot}/%{_unitdir}/clash@.service
+install -Dm644 %{S:2} %{buildroot}/%{_userunitdir}/clash.service
 
 %post
 setcap "cap_net_admin=ep" %{_bindir}/clash
 
 %files
 %{_bindir}/clash
-%{_unitdir}/clash@.service
-%{_userunitdir}/clash.service
+/%{_unitdir}/clash@.service
+/%{_userunitdir}/clash.service
 
 %changelog

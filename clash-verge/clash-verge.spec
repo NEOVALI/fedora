@@ -90,7 +90,6 @@ ln -sf %{_sysconfdir}/clash/Country.mmdb /usr/lib/%{name}/resources/Country.mmdb
 %{_bindir}/%{name}
 %dir /usr/lib/%{name}
 %dir /usr/lib/%{name}/resources
-/usr/lib/%{name}/resources/Country.mmdb
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 

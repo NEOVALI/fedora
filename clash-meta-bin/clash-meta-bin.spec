@@ -47,11 +47,10 @@ ln -sf %{_sysconfdir}/clash/Country.mmdb %{_sysconfdir}/clash-meta/Country.mmdb
 
 %files
 %{_bindir}/clash-meta
-%{_unitdir}/clash-meta@.service
-%{_userunitdir}/clash-meta.service
+/%{_unitdir}/clash-meta@.service
+/%{_userunitdir}/clash-meta.service
 %dir %{_sysconfdir}/clash-meta
 %{_sysconfdir}/clash-meta/config.yaml
-%{_sysconfdir}/clash-meta/Country.mmdb
 /usr/lib/sysusers.d/clash-meta.conf
 /usr/lib/tmpfiles.d/clash-meta.conf
 
