@@ -2,7 +2,7 @@
 
 Name:           clash-verge
 Version:        1.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Clash GUI based on tauri.
 License:        MIT
 Url:            https://github.com/zzzgydi/clash-verge
