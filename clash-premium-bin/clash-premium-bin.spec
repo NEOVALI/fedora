@@ -2,7 +2,7 @@
 
 Name:           clash-premium-bin
 Version:        2022.11.25
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Close-sourced pre-built Clash binary with TUN support
 License:        GPLv3
 URL:            https://github.com/Dreamacro/clash/releases/tag/premium
@@ -36,7 +36,7 @@ install -Dm644 %{S:1} %{buildroot}/usr/lib/systemd/system/clash@.service
 install -Dm644 %{S:2} %{buildroot}/usr/lib/systemd/user/clash.service
 
 %post
-setcap "cap_net_admin=ep" %{_bindir}/clash
+setcap "cap_net_admin=eip cap_net_bind_service=+eip" %{_bindir}/clash
 
 %files
 %{_bindir}/clash
