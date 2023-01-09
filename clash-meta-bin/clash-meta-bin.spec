@@ -2,7 +2,7 @@
 
 Name:           clash-meta-bin
 Version:        1.14.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Another Clash Kernel.
 License:        GPLv3
 URL:            https://github.com/MetaCubeX/Clash.Meta
@@ -36,8 +36,8 @@ gzip -d ./*
 %install
 cd %{_builddir}/%{name}-%{version}
 install -Dm755 Clash.Meta-linux-amd64-v%{version} %{buildroot}/%{_bindir}/clash-meta
-install -Dm644 %{S:1} %{buildroot}/%{_unitdir}/clash-meta@.service
-install -Dm644 %{S:2} %{buildroot}/%{_unitdir}/clash-meta.service
+install -Dm644 %{S:1} %{buildroot}/usr/lib/systemd/system/clash-meta@.service
+install -Dm644 %{S:2} %{buildroot}/usr/lib/systemd/system/clash-meta.service
 install -Dm644 %{S:3} %{buildroot}/usr/lib/sysusers.d/clash-meta.conf
 install -Dm644 %{S:4} %{buildroot}/usr/lib/tmpfiles.d/clash-meta.conf
 install -Dm644 %{S:5} %{buildroot}/%{_sysconfdir}/clash-meta/config.yaml
@@ -49,8 +49,8 @@ rm -rf %{_sysconfdir}/clash-meta/Country.mmdb
 
 %files
 %{_bindir}/clash-meta
-/%{_unitdir}/clash-meta@.service
-/%{_unitdir}/clash-meta.service
+/usr/lib/systemd/system/clash-meta@.service
+/usr/lib/systemd/system/clash-meta.service
 %dir %{_sysconfdir}/clash-meta
 %{_sysconfdir}/clash-meta/config.yaml
 /usr/lib/sysusers.d/clash-meta.conf
