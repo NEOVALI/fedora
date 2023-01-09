@@ -81,7 +81,7 @@ install -Dm644 %{S:1} -t %{buildroot}/%{_datadir}/applications
 
 
 %post
-ln -sf %{_sysconfdir}/clash/Country.mmdb /usr/lib/%{name}/resources/Country.mmdb
+ln -sf /etc/clash/Country.mmdb /usr/lib/%{name}/resources/Country.mmdb
 %postun
 rm -rf /usr/lib/%{name}/resources/Country.mmdb
 

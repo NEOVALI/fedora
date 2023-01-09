@@ -2,7 +2,7 @@
 
 Name:           clash-meta-bin
 Version:        1.14.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Another Clash Kernel.
 License:        GPLv3
 URL:            https://github.com/MetaCubeX/Clash.Meta
@@ -43,7 +43,7 @@ install -Dm644 %{S:4} %{buildroot}/usr/lib/tmpfiles.d/clash-meta.conf
 install -Dm644 %{S:5} %{buildroot}/%{_sysconfdir}/clash-meta/config.yaml
 
 %post
-ln -sf %{_sysconfdir}/clash/Country.mmdb %{_sysconfdir}/clash-meta/Country.mmdb
+ln -sf %{_sysconfdir}/clash/Country.mmdb /etc/clash-meta/Country.mmdb
 %postun
 rm -rf %{_sysconfdir}/clash-meta/Country.mmdb
 
